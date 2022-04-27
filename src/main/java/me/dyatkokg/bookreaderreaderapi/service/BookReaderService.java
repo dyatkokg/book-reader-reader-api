@@ -11,7 +11,7 @@ public class BookReaderService {
 
     private final BookReaderClient client;
 
-    public ReadBookDTO readBooks(String id, Integer page) {
-        return client.readBook(id, page);
+    public ReadBookDTO readBooks(String id, Integer page, String header) {
+        return client.readBook(id, page,header);
     }
 }

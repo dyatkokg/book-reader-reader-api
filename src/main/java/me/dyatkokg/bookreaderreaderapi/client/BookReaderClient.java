@@ -4,6 +4,7 @@ import me.dyatkokg.bookreaderreaderapi.dto.ReadBookDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(
@@ -13,5 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface BookReaderClient {
 
     @GetMapping("{id}")
-    ReadBookDTO readBook(@PathVariable("id") String id, @RequestParam("page") Integer page);
+    ReadBookDTO readBook(@PathVariable("id") String id, @RequestParam("page") Integer page,
+                         @RequestHeader ("Authorization") String header);
+
 }

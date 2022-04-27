@@ -13,7 +13,8 @@ public class BookReaderController {
     private final BookReaderService service;
 
     @GetMapping("{id}")
-    public ReadBookDTO readBook(@PathVariable("id") String id, @RequestParam("page") Integer page) {
-        return service.readBooks(id, page);
+    public ReadBookDTO readBook(@PathVariable("id") String id, @RequestParam("page") Integer page,
+                                @RequestHeader ("Authorization") String header) {
+        return service.readBooks(id, page, header);
     }
 }

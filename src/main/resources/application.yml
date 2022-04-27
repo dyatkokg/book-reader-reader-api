@@ -6,7 +6,7 @@ api:
   external:
     book-reader-books-api:
       name: book-reader-books-api
-      url: ${BOOKS_URL:localhost:8080/books/}
+      url: ${BOOKS_URL:localhost:8082/books/}
       endpoint: {id}
 
 full-path: ${api.external.book-reader-books-api.url}${api.external.book-reader-books-api.endpoint}
