@@ -1,15 +1,12 @@
-logging:
-  level:
-    org.springframework.web.client.RestTemplate: DEBUG
-
-api:
-  external:
-    book-reader-books-api:
-      name: book-reader-books-api
-      url: ${BOOKS_URL:localhost:8082/books/}
-      endpoint: {id}
-
-full-path: ${api.external.book-reader-books-api.url}${api.external.book-reader-books-api.endpoint}
-
+spring:
+  application:
+    name: book-reader-reader-api
+  profiles:
+    active: development
+  config:
+    import: optional:configserver:http://localhost:8080
+  cloud:
+    config:
+      fail-fast: true
 server:
   port: 8084
